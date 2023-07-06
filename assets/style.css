@@ -15,3 +15,9 @@ body {
   border-radius: 10px;
   padding: 30px;
 }
+.application h1 {
+  font-weight: 40px;
+  color: #42f5d1;
+  border-bottom: 1px solid #d4845f;
+  padding-bottom: 30px;
+}
