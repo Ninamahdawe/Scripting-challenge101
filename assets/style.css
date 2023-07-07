@@ -7,6 +7,11 @@
 body {
   background: #d5a87cd0;
 }
+.startintro h1 {
+  color: #42f5d1;
+  font-weight: 300;
+}
+
 .application {
   background: #fff;
   width: 90%;
@@ -14,6 +19,7 @@ body {
   margin: 100px auto 0;
   border-radius: 10px;
   padding: 30px;
+  display: none;
 }
 .application h1 {
   font-size: 40px;

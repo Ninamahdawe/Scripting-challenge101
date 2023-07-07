@@ -1,38 +1,53 @@
-var question = [
+var questions = [
     {
         question: "Which of the following is a programming language?",
-        answer: [
-            { text: "HTML", correct: true },
-            { text: "Shark", correct: false },
-            { text: "Google", correct: false },
-            { text: "Adope scan", correct: false },
-        ]
+        answers: [
+            { text: "HTML", },
+            { text: "Shark" },
+            { text: "Google", },
+            { text: "Adope scan" },
+        ], correct: 0
     },
     {
         question: "What does the CSS acronym stand for?",
-        answer: [
-            { text: "Cascading Style Sheets", correct: true },
-            { text: "Float", correct: false },
-            { text: "String", correct: false },
-            { text: ".Txt", correct: false },
-        ]
+        answers: [
+            { text: "Cascading Style Sheets", },
+            { text: "Float", },
+            { text: "String", },
+            { text: ".Txt", },
+        ], correct: 0
     },
     {
         question: "Which operator is used for concatenation in most programming languages?",
-        answer: [
-            { text: "/", correct: false },
-            { text: "+", correct: true },
-            { text: "%", correct: false },
-            { text: "boolean", correct: false },
-        ]
+        answers: [
+            { text: "/", },
+            { text: "+", },
+            { text: "%", },
+            { text: "boolean", },
+        ], correct: 1
     },
     {
         question: "Which keyword is used to define a function in JavaScript? ",
-        answer: [
-            { text: "Def", correct: false },
-            { text: "Python", correct: false },
-            { text: "Return", correct: false },
-            { text: "function", correct: true },
-        ]
+        answers: [
+            { text: "Def", },
+            { text: "Python", },
+            { text: "Return", },
+            { text: "function", },
+        ], correct: 3
     }
-]
+];
+
+var questionElement = document.getElementById(".question");
+var answer = document.getElementById(".answer");
+var startBtn = document.getElementById("#startBtn");
+var startIntro = document.getElementById(".startIntro")
+console.log("startIntro");
+var currentQuestionIndex = 0;
+var score = 0;
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    startIntro.setAttribute("style", "display:none");
+}
+
+startBtn.addEventListener("click", startQuiz);
