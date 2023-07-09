@@ -37,10 +37,10 @@ var questions = [
     }
 ];
 
-var questionElement = document.getElementById(".question");
-var answer = document.getElementById(".answer");
-var startBtn = document.getElementById("#startBtn");
-var startIntro = document.getElementById(".startIntro")
+var questionElement = document.querySelector("#question");
+var answerBtns = document.querySelectorAll(".btn");
+var startBtn = document.querySelector("#startBtn");
+var startIntro = document.querySelector(".startIntro")
 console.log("startIntro");
 var currentQuestionIndex = 0;
 var score = 0;
@@ -48,6 +48,21 @@ function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     startIntro.setAttribute("style", "display:none");
+    showQuestion();
 }
+
+function showQuestion() { }
+var currentQuestion = questions[currentQuestionIndex];
+var questionNo = currentQuestionIndex + 1;
+questionElement.textContent = questionNo + ". " + currentQuestion.
+    question;
+currentQuestion.answers.forEach(function (answers, index) {
+    // answerBtns[index].textContent = questions[currentQuestion].answers[index];
+    console.log('answers', index);
+    answerBtns[index].textContent = currentQuestion.answers[index].text;
+
+
+})
+
 
 startBtn.addEventListener("click", startQuiz);
