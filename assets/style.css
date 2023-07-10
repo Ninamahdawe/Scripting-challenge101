@@ -1,89 +1,34 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 body {
-  background: #d5a87cd0;
+  background: #ffe4cf;
 }
-.startIntro h1 {
-  color: #42f5d1;
-  font-weight: bolder;
+.start-page h1 {
+  font-size: 75px;
   text-align: center;
-  font-size: 60px;
-  border: 3px solid #42f5d1;
-  border-radius: 10px;
-  background-color: #806458;
-  padding: 30px;
-}
-.startIntro p {
-  color: #42f5d1;
-  text-align: center;
-  font-size: 50px;
+  padding: 20px;
   margin: 10px;
-  border: 3px solid #42f5d1;
-  background-color: #806458;
+  border: 1px solid #fff;
+  background: #fff;
+  border-radius: 10;
+  width: max-content;
+  transform: translateX(350px) translateY(250px);
 }
-#startBtn {
-  color: #42f5d1;
-  font-size: large;
-  background-color: #806458;
-  border-radius: 5px;
-  border: 1px solid #42f5d1;
+.start-page p {
+  font-size: 50px;
+  padding: 40px;
+  transform: translateX(350px);
+}
+
+#startbtn {
+  font-size: 30px;
   margin: auto;
-  padding: 30;
-  transform: translateX(500px);
-}
-
-.application {
   background: #fff;
-  width: 90%;
-  max-width: 600px;
-  margin: 100px auto 0;
-  border-radius: 10px;
   padding: 30px;
-  display: none;
-}
-
-.quiz {
-  padding: 25px 0;
-}
-.quiz h2 {
-  font-size: 20px;
-  color: #806458;
-  font-weight: 600;
-}
-.btn {
-  background: #fff;
-  color: #806458;
-  font-weight: 550;
-  width: 100%;
-  border: 1px solid #d4845f;
-  padding: 10px;
-  margin: 10px 0;
-  text-align: left;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.btn:hover {
-  background: #42f5d1;
-  color: #806458;
-}
-#next-btn {
-  background: #fff;
-  color: #806458;
-  font-weight: 600;
-  width: 170px;
-  border: solid #d4845f;
-  padding: 10px;
-  margin: 25px auto 0;
-  border-radius: 4px;
-  cursor: pointer;
-  display: none;
-}
-#next-btn:hover {
-  background: #42f5d1;
-  color: #806458;
+  transform: translateX(400px) translateY(200px);
+  border-radius: 1px;
 }
