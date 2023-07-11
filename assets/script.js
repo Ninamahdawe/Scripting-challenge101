@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //  TODO :  CHECK if needed var answersElement = document.getElementById("answers");
     // answers section
     var answerBtns = document.querySelectorAll(".answerButton")
+    var resultEl = document.querySelector("#results")
     for (var i = 0; i < answerBtns.length; i++) {
         answerBtns[i].setAttribute("id", i)
         answerBtns[i].addEventListener("click", selectAnswer);
@@ -118,15 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (time < 0) {
                 time = 0
             }
-            document.querySelector("#results").textContent = "Incorrect"
+            resultEl.textContent = "Incorrect"
         }
         else {
-            document.querySelector("#results").textContent = "Correct"
+            resultEl.textContent = "Correct"
         }
-        document.querySelector("#results").removeAttribute("display:none;");
+        document.querySelector("#results").setAttribute("style", "display:inline-block");
 
         setTimeout(function () {
-            document.querySelector("#results").setAttribute("style", "display:none");
+            document.querySelector("#results").setAttribute("style", "display:none;");
         }, 1500);
 
         var selectedAnswerIndex = parseInt(event.target.getAttribute("answers"));
