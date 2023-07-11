@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 { text: "HTML" },
                 { text: "Shark" },
                 { text: "Google" },
-                { text: "Adobe scan" }
+                { text: "Adobe scan" },
             ],
-            correct: 0
+            correct: 0,
         },
         {
             question: "What does the CSS acronym stand for?",
@@ -16,19 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 { text: "Cascading Style Sheets" },
                 { text: "Float" },
                 { text: "String" },
-                { text: ".Txt" }
+                { text: ".Txt" },
             ],
-            correct: 0
+            correct: 0,
         },
         {
-            question: "Which operator is used for concatenation in most programming languages?",
+            question:
+                "Which operator is used for concatenation in most programming languages?",
             answers: [
                 { text: "/" },
                 { text: "+" },
                 { text: "%" },
-                { text: "boolean" }
+                { text: "boolean" },
             ],
-            correct: 1
+            correct: 1,
         },
         {
             question: "Which keyword is used to define a function in JavaScript?",
@@ -36,17 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 { text: "Def" },
                 { text: "Python" },
                 { text: "Return" },
-                { text: "function" }
+                { text: "function" },
             ],
-            correct: 3
-        }
+            correct: 3,
+        },
     ];
 
     var currentQuestionIndex = 0;
     var time = 0;
     var timeInterval;
 
-    // start section 
+    // start section
     var startButton = document.getElementById("startbtn");
     startButton.addEventListener("click", startQuiz);
 
@@ -57,16 +58,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //  TODO :  CHECK if needed var answersElement = document.getElementById("answers");
     // answers section
-    var answerBtns = document.querySelectorAll(".answerButton")
-    var resultEl = document.querySelector("#results")
+    var answerBtns = document.querySelectorAll(".answerButton");
+    var resultEl = document.querySelector("#results");
     for (var i = 0; i < answerBtns.length; i++) {
-        answerBtns[i].setAttribute("id", i)
+        answerBtns[i].setAttribute("id", i);
         answerBtns[i].addEventListener("click", selectAnswer);
     }
 
-    // score value section 
+    // score value section
     var scoreElement = document.getElementById("score-value");
-    // intials section 
+    // intials section
     var initialsElement = document.getElementById("initials");
     var saveButton = document.getElementById("savebtn");
 
@@ -104,27 +105,30 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < question.answers.length; i++) {
             var answer = question.answers[i];
             console.log(answerBtns[i]);
-            answerBtns[i].textContent = answer.text
-
+            answerBtns[i].textContent = answer.text;
         }
     }
 
     function selectAnswer(event) {
-        var answerButton = event.target
+        var answerButton = event.target;
         // if (selectedAnswerIndex === (".btn")) {
         //     return;
         // }
-        if (Number.parseInt(answerButton.getAttribute('id')) !== questions[currentQuestionIndex].correct) {
+        if (
+            Number.parseInt(answerButton.getAttribute("id")) !==
+            questions[currentQuestionIndex].correct
+        ) {
             time -= 10;
             if (time < 0) {
-                time = 0
+                time = 0;
             }
-            resultEl.textContent = "Incorrect"
+            resultEl.textContent = "Incorrect";
+        } else {
+            resultEl.textContent = "Correct";
         }
-        else {
-            resultEl.textContent = "Correct"
-        }
-        document.querySelector("#results").setAttribute("style", "display:inline-block");
+        document
+            .querySelector("#results")
+            .setAttribute("style", "display:inline-block");
 
         setTimeout(function () {
             document.querySelector("#results").setAttribute("style", "display:none;");
@@ -134,8 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var question = questions[currentQuestionIndex];
         var selectedAnswer = question.answers[selectedAnswerIndex];
 
-
         currentQuestionIndex++;
+
         if (currentQuestionIndex < questions.length) {
             setTimeout(showQuestion, 1000);
         } else {
@@ -154,8 +158,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function saveScore() {
         var initials = initialsElement.value;
         var score = time;
+        var highScores = JSON.parse(localStorage.getItem("Highscore")) || [];
+        highScores.push({ initials, score })
+        localStorage.setItem("Highscore", JSON.stringify(highScores));
+        alert("Score saved! Initials: " + initials + ", Score: " + score);
 
-
-        alert("Score saved! Initials: " + initials + ", Score: " + score)
     }
+    function highScorelist() {
+        var highScorelist
+    }
+
 });
+
