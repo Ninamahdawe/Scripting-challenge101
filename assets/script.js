@@ -46,22 +46,36 @@ document.addEventListener("DOMContentLoaded", function () {
     var time = 0;
     var timeInterval;
 
+    // start section 
     var startButton = document.getElementById("startbtn");
+    startButton.addEventListener("click", startQuiz);
+
+    // time section
     var timerElement = document.getElementById("time");
+    // questions section
     var questionElement = document.getElementById("question");
-    var answersElement = document.getElementById("answers");
+
+    //  TODO :  CHECK if needed var answersElement = document.getElementById("answers");
+    // answers section
+    var answerBtns = document.querySelectorAll(".answerButton")
+    for (var i = 0; i < answerBtns.length; i++) {
+        answerBtns[i].setAttribute("id", i)
+        answerBtns[i].addEventListener("click", selectAnswer);
+    }
+
+    // score value section 
     var scoreElement = document.getElementById("score-value");
+    // intials section 
     var initialsElement = document.getElementById("initials");
     var saveButton = document.getElementById("savebtn");
 
-    startButton.addEventListener("click", startQuiz);
     saveButton.addEventListener("click", saveScore);
 
     function startQuiz() {
         time = 60;
         startTimer();
 
-        startButton.style.display = "none";
+        //startButton.style.display = "none";
         document.querySelector(".start-page").style.display = "none";
         document.querySelector(".quiz").style.display = "block";
 
@@ -84,27 +98,25 @@ document.addEventListener("DOMContentLoaded", function () {
         var question = questions[currentQuestionIndex];
 
         questionElement.textContent = question.question;
-        answersElement.innerHTML = "";
+        // answersElement.innerHTML = "";
 
         for (var i = 0; i < question.answers.length; i++) {
             var answer = question.answers[i];
-            var li = document.createElement("li");
-            li.textContent = answer.text;
-            li.setAttribute("answers", i);
-            li.addEventListener("click", selectAnswer);
-            answersElement.appendChild(li);
+            console.log(answerBtns[i]);
+            answerBtns[i].textContent = answer.text
+
         }
     }
 
     function selectAnswer(event) {
-        var answer = event.target
-        if (selectedAnswerIndex === (".btn")) {
-            return;
-        }
-        if (answer.value !== questions[currentQuestionIndex].correct) {
-            secondLeft -= 10;
-            if (secondLeft < 0) {
-                secondLeft = 0
+        var answerButton = event.target
+        // if (selectedAnswerIndex === (".btn")) {
+        //     return;
+        // }
+        if (Number.parseInt(answerButton.getAttribute('id')) !== questions[currentQuestionIndex].correct) {
+            time -= 10;
+            if (time < 0) {
+                time = 0
             }
             document.querySelector("#results").textContent = "Incorrect"
         }
@@ -143,6 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var score = time;
 
 
-        alert("Score saved! Initials: " + initials + ", Score: " + score);
+        alert("Score saved! Initials: " + initials + ", Score: " + score)
     }
 });
