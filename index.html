@@ -7,27 +7,27 @@
     <title>Script-coding-quiz</title>
   </head>
   <body>
-    <section class="start-page">
+    <section id="start-page" class="start-page">
       <h1>Script coding quiz</h1>
-      <p>Let's test your knowledge! </p>
-          <button id="startbtn">Start Quiz</button>
+      <p>Let's test your knowledge!</p>
+      <button id="startbtn">Start Quiz</button>
     </section>
-    <section class="quiz" hidden>
-        <h2 id="question">Question</h2>
-        <div id="answers">          
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3 </button>
-        <button class="btn">Answer 4</button>
-
-
-    <section class="score container hide">
-    <aside id="user-score">score</aside>
-      <button id="restart quiz">restart</button>
+    <section class="quiz" style="display: none">
+      <p id="timer">Time : <span id="time">0</span></p>
+      <h2 id="question">Question</h2>
+      <ul id="answers">
+        <li class="btn">Answer 1</li>
+        <li class="btn">Answer 2</li>
+        <li class="btn">Answer 3</li>
+        <li class="btn">Answer 4</li>
+      </ul>
+     <p id="results"></p>
+    <section id="score" style="display: none">
+      <h3>Game Over!</h3>
+      <p>Your score: <span id="score-value"></span></p>
+      <input type="text" id="initials" placeholder="Enter your initials" />
+      <button id="savebtn">Save Score</button>
     </section>
-    <section></section>
-    <section></section>
-
     <script src="assets/script.js"></script>
   </body>
 </html>
