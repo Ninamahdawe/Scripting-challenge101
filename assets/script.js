@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showQuestion() {
         var question = questions[currentQuestionIndex];
-
+        console.log(question);
         questionElement.textContent = question.question;
         // answersElement.innerHTML = "";
 
@@ -159,14 +159,31 @@ document.addEventListener("DOMContentLoaded", function () {
         var initials = initialsElement.value;
         var score = time;
         var highScores = JSON.parse(localStorage.getItem("Highscore")) || [];
-        highScores.push({ initials, score })
+        highScores.push({ initials, score });
         localStorage.setItem("Highscore", JSON.stringify(highScores));
         alert("Score saved! Initials: " + initials + ", Score: " + score);
-
+        highScorelist(highScores);
     }
-    function highScorelist() {
-        var highScorelist
+    function highScorelist(highScores) {
+        document.querySelector("#score").style.display = "none";
+        document.querySelector("#highscore").style.display = "block";
+        highScores.sort(function (a, b) {
+            return b.score - a.score;
+        })
+        for (var i = 0; i < highScores.length; i++) {
+            var highScoreEl = document.createElement("li")
+            highScoreEl.textContent = highScores[i].score + " . " + highScores[i].initials
+            document.getElementById("highscorelist").appendChild(highScoreEl)
+
+        }
+
     }
 
 });
 
+// function add(num1, num2) {
+//     var total = num1 + num2
+//     return total
+// }
+// var somenum = 213423
+// add(somenum,123122321)
