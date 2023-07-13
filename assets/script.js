@@ -179,6 +179,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
+    var buttonEl = document.querySelector("#clear-highscore")
+    buttonEl.addEventListener("click", function () {
+        localStorage.removeItem("Highscore")
+        var highScorelist = document.querySelector("#highscorelist")
+        highScorelist.innerHTML = "";
+    })
 
 });
 
