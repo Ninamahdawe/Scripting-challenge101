@@ -2,35 +2,48 @@
 <html lang="en">
   <head>
     <link href="assets/style.css" rel="stylesheet" />
+    <!-- link to external CSS file -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  title of the HTML document -->
     <title>Script-coding-quiz</title>
   </head>
   <body>
+    <!-- the start page of the quiz  -->
     <section id="start-page" class="start-page">
       <h1>Script coding quiz</h1>
       <p>Let's test your knowledge!</p>
+      <!-- button to start the quiz -->
       <button id="startbtn">Start Quiz</button>
     </section>
     <section class="quiz" style="display: none">
+      <!-- displaying the timer -->
       <p id="timer">Time : <span id="time">0</span></p>
       <h2 id="question">Question</h2>
+      <!-- unordered list for the answer options -->
       <ul id="answers">
         <button class="answerButton">Answer 1</button>
         <button class="answerButton">Answer 2</button>
         <button class="answerButton">Answer 3</button>
         <button class="answerButton">Answer 4</button>
       </ul>
+      <!-- section to display quiz results -->
       <section id="results" class="results"></section>
     </section>
     <section id="score" style="display: none">
+      <!-- title for the score section -->
       <h3>Game Over!</h3>
+      <!-- Displaying the user's score -->
       <p>Your score: <span id="score-value"></span></p>
+      <!-- Input field for user's initials  for the quiz results-->
       <input type="text" id="initials" placeholder="Enter your initials" />
+      <!-- button to save the score -->
       <button id="savebtn">Save Score</button>
     </section>
+    <!-- Section for displaying high scores with  the initial -->
     <section id="highscore" style="display: none">
       <h3>You did it! High score!</h3>
+      <!-- Table for displaying the high scores in table format -->
       <table class="center">
         <thead>
           <tr>
@@ -40,6 +53,7 @@
         </thead>
         <tbody id="highscorelist"></tbody>
       </table>
+      <!-- Button to clear the high scores -->
       <button id="clear-highscore">Clear</button>
     </section>
     <script src="assets/script.js"></script>

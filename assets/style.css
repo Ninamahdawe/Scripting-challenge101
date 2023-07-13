@@ -4,10 +4,11 @@
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
 }
-
+/*  background color for the whole page  */
 body {
   background: #ffe4cf;
 }
+/* the style of the start page */
 
 .start-page {
   display: flex;
@@ -34,7 +35,7 @@ body {
   font-weight: bolder;
   padding: 40px;
 }
-
+/* the start button to start the user's quiz  */
 #startbtn {
   font-size: 30px;
   font-weight: bolder;
@@ -45,10 +46,12 @@ body {
   transition: all 0.3s;
 }
 
+/* the hovering effect when you hover to the start button  */
 #startbtn:hover {
   background: #f5c7a4;
   cursor: pointer;
 }
+/*   the time thats displayed on the page */
 p#timer {
   font-size: 30px;
   font-weight: bold;
@@ -56,6 +59,8 @@ p#timer {
   justify-content: center;
   align-items: center;
 }
+/*   the stlye  element for each question displayed on the page */
+
 h2#question {
   background: #fff;
   color: #000;
@@ -69,6 +74,8 @@ h2#question {
   text-align: left;
   box-sizing: border-box;
 }
+/*   the stlye for each  answer button thats displayed on the page */
+
 #answers button {
   background: #fff;
   color: #000;
@@ -81,6 +88,8 @@ h2#question {
   border-radius: 4px;
   display: block;
 }
+/*   the hovering effect when a user clicks on the button */
+
 #answers button:hover {
   background: #f5c7a4;
   cursor: pointer;
