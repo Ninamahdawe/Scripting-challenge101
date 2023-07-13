@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var saveButton = document.getElementById("savebtn");
 
     saveButton.addEventListener("click", saveScore);
-
+    // starting the quiz on the first page of the quiz
     function startQuiz() {
         time = 60;
         startTimer();
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         showQuestion();
     }
-
+    // the timer that is displayed on the top of the page 
     function startTimer() {
         timerInterval = setInterval(function () {
             time--;
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         document
             .querySelector("#results")
-            .setAttribute("style", "display:inline-block");
+            .setAttribute("style", "display: block");
 
         setTimeout(function () {
             document.querySelector("#results").setAttribute("style", "display:none;");
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var highScores = JSON.parse(localStorage.getItem("Highscore")) || [];
         highScores.push({ initials, score });
         localStorage.setItem("Highscore", JSON.stringify(highScores));
-        alert("Score saved! Initials: " + initials + ", Score: " + score);
+        alert(" Your Score is saved! Initials: " + initials + ", Score: " + score);
         highScorelist(highScores);
     }
     function highScorelist(highScores) {
@@ -171,8 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return b.score - a.score;
         })
         for (var i = 0; i < highScores.length; i++) {
-            var highScoreEl = document.createElement("li")
-            highScoreEl.textContent = highScores[i].score + " . " + highScores[i].initials
+            var highScoreEl = document.createElement("tr");
+
+            highScoreEl.innerHTML = "<td>" + highScores[i].score + "</td><td>" + highScores[i].initials + "</td>"
             document.getElementById("highscorelist").appendChild(highScoreEl)
 
         }
@@ -181,9 +182,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// function add(num1, num2) {
-//     var total = num1 + num2
-//     return total
-// }
-// var somenum = 213423
-// add(somenum,123122321)

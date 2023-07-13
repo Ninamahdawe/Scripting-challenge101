@@ -52,34 +52,119 @@ body {
 p#timer {
   font-size: 30px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h2#question {
   background: #fff;
   color: #000;
   font-weight: 550;
-  width: 100%;
+  width: 50%;
   border: 1px solid #d4845f;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   text-align: left;
   border-radius: 4px;
+  text-align: left;
+  box-sizing: border-box;
 }
-#answers li {
+#answers button {
   background: #fff;
   color: #000;
   font-weight: 550;
-  width: 100%;
+  width: 50%;
   border: 1px solid #d4845f;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   text-align: left;
   border-radius: 4px;
+  display: block;
 }
-#answers li:hover {
+#answers button:hover {
   background: #f5c7a4;
   cursor: pointer;
 }
-#answers li.selected {
-  background: #f5c7a4;
-  color: #000000;
+.results {
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+}
+#score {
+  text-align: center;
+  background-color: #f5c7a4;
+  padding: 20px;
+}
+
+#score h3 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #000;
+  background-color: #ffe4cf;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+#score p {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+#score-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d4845f;
+}
+
+#initials {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 10px;
+  width: 200px;
+}
+#initials:hover {
+  background: #ebd5c5;
+  cursor: pointer;
+}
+#savebtn {
+  background-color: #d4845f;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#savebtn:hover {
+  background-color: #ffe4cf;
+  cursor: pointer;
+}
+
+#highscore {
+  text-align: center;
+  background-color: #f5c7a4;
+  padding: 20px;
+}
+
+#highscore h3 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #000;
+  background-color: #ffe4cf;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+#highscorelist {
+  list-style: decimal;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+#highscorelist {
+  margin-bottom: 5px;
 }

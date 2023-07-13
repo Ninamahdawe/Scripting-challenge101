@@ -21,7 +21,7 @@
         <button class="answerButton">Answer 3</button>
         <button class="answerButton">Answer 4</button>
       </ul>
-      <section id="results"></section>
+      <section id="results" class="results"></section>
     </section>
     <section id="score" style="display: none">
       <h3>Game Over!</h3>
@@ -30,8 +30,16 @@
       <button id="savebtn">Save Score</button>
     </section>
     <section id="highscore" style="display: none">
-      <h3>High score</h3>
-      <ol id="highscorelist"></ol>
+      <h3>You did it! High score!</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Score</th>
+            <th>Initials</th>
+          </tr>
+        </thead>
+        <tbody id="highscorelist"></tbody>
+      </table>
     </section>
     <script src="assets/script.js"></script>
   </body>
