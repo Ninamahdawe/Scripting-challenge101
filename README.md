@@ -18,7 +18,7 @@ After the user clicks to save their score the high scores page will be displayed
 
 The user will also have the option to clear the high scores by clicking the "Clear" button thats displayed on the highscore page.
 
-![Website screenshot](/Scripting-quiz101/images/scriptingquiz101.html.png)
+![Website screenshot](/Scripting-quiz101/assets/images/scriptingquiz101.html.png)
 
 ## Project Link :
 
